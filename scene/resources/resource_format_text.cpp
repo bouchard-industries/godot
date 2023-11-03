@@ -445,7 +445,7 @@ Error ResourceLoaderText::load() {
 #ifdef TOOLS_ENABLED
 				// Silence a warning that can happen during the initial filesystem scan due to cache being regenerated.
 				if (ResourceLoader::get_resource_uid(path) != uid) {
-					WARN_PRINT(String(res_path + ":" + itos(lines) + " - ext_resource, invalid UID: " + uidt + " - using text path instead: " + path).utf8().get_data());
+					//WARN_PRINT(String(res_path + ":" + itos(lines) + " - ext_resource, invalid UID: " + uidt + " - using text path instead: " + path).utf8().get_data());
 				}
 #else
 				WARN_PRINT(String(res_path + ":" + itos(lines) + " - ext_resource, invalid UID: " + uidt + " - using text path instead: " + path).utf8().get_data());
