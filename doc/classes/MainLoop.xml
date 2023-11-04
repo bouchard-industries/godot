@@ -136,5 +136,9 @@
 		<constant name="NOTIFICATION_TEXT_SERVER_CHANGED" value="2018">
 			Notification received when text server is changed.
 		</constant>
+        <constant name="NOTIFICATION_IOS_WILL_TERMINATE" value="2019">
+            Notification received from iOS when the app will terminate.
+            Specific to the iOS platform.
+        </constant>
 	</constants>
 </class>
