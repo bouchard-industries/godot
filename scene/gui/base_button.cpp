@@ -175,15 +175,21 @@ void BaseButton::on_action_event(Ref<InputEvent> p_event) {
 	}
 
 	if (!p_event->is_pressed()) {
+        bool cancelPress = false;
 		Ref<InputEventMouseButton> mouse_button = p_event;
 		if (mouse_button.is_valid()) {
 			if (!has_point(mouse_button->get_position())) {
 				status.hovering = false;
+                if (!keep_pressed_outside) {
+                    cancelPress = true;
+                }
 			}
 		}
 		status.press_attempt = false;
 		status.pressing_inside = false;
-		emit_signal(SNAME("button_up"));
+        if (!cancelPress) {
+            emit_signal(SNAME("button_up"));
+        }
 	}
 
 	queue_redraw();
